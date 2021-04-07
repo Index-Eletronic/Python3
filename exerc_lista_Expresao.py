@@ -3,7 +3,7 @@ Crie um programa onde o usuário digite uma expressão qualquer que use parênte
  se a expressão passada está com os parênteses abertos e fechados na ordem correta.
 '''
 
-expr = str(input('Digite uma expressão')) # Toda string é uma lista. E por usar o FOR para pegar cada letra/simbulo
+expr = str(input('Digite uma expressão')) # Toda string é uma lista. E por usar o FOR para pegar cada letra/simbolo
 pilha = []
 for simb in expr: # Ira pegar cada simbolo.
     if simb == '(':
