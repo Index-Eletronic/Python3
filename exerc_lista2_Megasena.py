@@ -9,11 +9,12 @@ jogos = list()
 print('-=' * 30)
 print(f' {"PALPITES PARA MEGASENA":^30} ')
 print('-=' * 30)
+nome = str(input('Digite seu nome: '))
 quant = int(input('QUANTOS JOGOS VOCÊ QUER FAZER? '))
 tot = 1
-while tot <= 0:
+while tot <= quant:
     cont = 0
-    with True:
+    while True:
         num = randint(1, 60)
         if num not in lista:
             lista.append(num)
@@ -26,6 +27,6 @@ while tot <= 0:
     tot += 1
 print('-=' * 3, f'SORTEANDO {quant} JOGOS','-=' * 3)
 for i, l in enumerate(jogos):
-     print(f'JOGO: {i+1}: {l:^3}')
+     print(f'JOGO: {i+1}: {l}')
      sleep(2)
 print('-=' * 3, 'BOA SORTE','-=' * 3)
