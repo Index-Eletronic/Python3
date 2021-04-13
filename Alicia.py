@@ -72,6 +72,7 @@ while opcao != 4:
         while pergunta not in 'SN':
             pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
             if pergunta == 'N':
+                print(f'Você acertou {conta} e errou {conte}')
                 break
 
     elif opcao == 2:
@@ -94,9 +95,18 @@ while opcao != 4:
                 result = soma
                 if result == soma:
                     print('Voce acertou!')
+                    conta += 1
                 else:
                     print(f'O resultado correto é: {soma}')
                     print('Voce errou!')
+                    conte += 1
+
+                    pergunta = ''
+                 while pergunta not in 'SN':
+                    pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
+                    if pergunta == 'Nn':
+                        print(f'Você acertou {conta} e errou {conte}')
+                        break
 
     elif opcao == 3:
         print('BEM VINDO A AULA DE GEOGRÁFIA')
