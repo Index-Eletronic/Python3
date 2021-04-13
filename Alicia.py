@@ -12,15 +12,30 @@ print('''        [1] - EXERCICÍOS DE PORTUGUÊS
         [2] - EXERCÍCIOS DE MATEMÁTICA
         [3] - EXERCÍCIOS DE GEOGRÁFIA
         [4] - SAIR DO PROGRAMA''')
-opcao = conta = conte = 0
+opcao = int(input(' Digite a opção que deseja:'))
+conta = conte = 0
+if opcao == 1:
+    print('BEM VINDO A AULA DE PORTUGUÊS !')
+    sleep(2)
+    print('OBJETIVO: ADIVINHE SE A PALABRA SORTEADA TEM "S", "SS", "C" OU "Ç".')
+    sleep(2)
+
 while opcao != 4:
-    opcao = int(input(' Digite a opção que deseja:'))
     if opcao == 1:
-        print('BEM VINDO A AULA DE PORTUGUÊS !')
-        sleep(2)
-        print('OBJETIVO: ADIVINHE SE A PALABRA SORTEADA TEM "S", "SS", "C" OU "Ç".')
-        sleep(2)
-        palavra = random.choice(['acessível', 'agressivo', 'assim', 'assinar']).strip().upper()
+        palavra = random.choice(
+            ['acetinado', 'açafrão', 'almaço', 'anoitecer', 'censura', 'cimento', 'dança', 'contorção',
+             'exceção', 'endereço', 'Iguaçu', 'maçarico', 'maçaroca', 'maço', 'maciço', 'miçanga',
+             'muçulmano', 'paçoca',
+             'pança', 'pinça', 'Suíça', 'ânsia', 'ansiar', 'ansioso', 'ansiedade', 'cansar', 'cansado',
+             'descansar', 'descanso',
+             'diversão', 'excursão', 'farsa', 'ganso', 'hortênsia', 'pretensão', 'pretensioso',
+             'propensão', 'remorso', 'sebo', 'tenso', 'utensílio', 'acesso', 'acessório', 'acessível',
+             'assar', 'asseio', 'assinar',
+             'carrossel', 'cassino', 'concessão', 'discussão', 'escassez', 'escasso', 'essencial',
+             'expressão', 'fracasso', 'impressão', 'massa',
+             'massagista', 'missão', 'necessário', 'obsessão', 'opressão', 'pêssego', 'procissão',
+             'profissão', 'ressurreição', 'sessenta',
+             'sossegar', 'sossego', 'submissão', 'sucessivo']).strip().upper()
         if 'S' in palavra:
             sems = palavra.replace("S", "")
         elif 'SS' in palavra:
@@ -32,6 +47,7 @@ while opcao != 4:
 
         print(f'A PALABRA SORTEADA É: {sems}')
         resp = str(input('DIGITE A PALABRA CORRETA AQUI: ')).strip().upper()
+
         if resp == palavra:
             print('VOCÊ ACERTOU, PARABENS')
             conta += 1
@@ -43,7 +59,6 @@ while opcao != 4:
             pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
             if pergunta == 'N':
                 break
-
 
     elif opcao == 2:
         print('BEM VINDO A AULA DE MATEMÁTICA !')
