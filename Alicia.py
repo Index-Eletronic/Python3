@@ -5,7 +5,7 @@ import random
 from random import randint
 from time import sleep
 
-print('-=' * 10, "\33[0;33;44mBEM VINDO A PROFa.ALICIA V1.0\33[m", '-=' * 10 )
+print('-=' * 10, "\33[0;40;42mBEM VINDO A PROFa.ALICIA V1.0\33[m", '-=' * 10 )
 print()
 print('O QUE VOCÊ GOSTARIA DE ESTUDAR HOJE?')
 print('ESCOLHA A OPÇÃO:')
@@ -77,14 +77,18 @@ while opcao != 4:
     elif opcao == 2:
         n1 = randint(0, 100)
         n2 = randint(0, 100)
-        soma = n1 + n2
         sub = n1 - n2
         div = n1 - n2
         escolha = random.choice(['SOMA', 'SUBTRAÇÂO', 'DIVISÂO'])
-        print(f'O COMPUTADOR ESCOLHEU 2 NUMEROS: {n1}  E {n2}')
-        result = float(input(f'Qual o resultado da {escolha} :'))
+        print(f' === O COMPUTADOR ESCOLHEU 2 NUMEROS -> {n1} E {n2} ====')
+        result = float(input(f'Qual o resultado da {escolha} entre eles: '))
         if escolha[0]:
-                escolha[0] == soma
+                soma = n1 + n2
+                result = soma
+                if result == soma:
+                    print('Voce acertou!')
+                else:
+                    print('Voce errou!')
 
     elif opcao == 3:
         print('BEM VINDO A AULA DE GEOGRÁFIA')
