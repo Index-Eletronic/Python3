@@ -2,6 +2,7 @@
 Faça um programa que insira as palavras numa lista e diga se estão corretas..
 '''
 import random
+from random import randint
 from time import sleep
 
 print('-=' * 10, "\33[0;33;44mBEM VINDO A PROFa.ALICIA V1.0\33[m", '-=' * 10 )
@@ -14,11 +15,24 @@ print('''        [1] - EXERCICÍOS DE PORTUGUÊS
         [4] - SAIR DO PROGRAMA''')
 opcao = int(input(' Digite a opção que deseja:'))
 conta = conte = 0
+n1 = 0
+n2 = 0
 if opcao == 1:
     print('BEM VINDO A AULA DE PORTUGUÊS !')
     sleep(2)
     print('OBJETIVO: ADIVINHE SE A PALABRA SORTEADA TEM "S", "SS", "C" OU "Ç".')
     sleep(2)
+elif opcao == 2:
+    print('BEM VINDO A AULA DE MATEMÁTICA !')
+    sleep(2)
+    print('OBJETIVO: FAÇA AS CONTAS A SEGUIR.')
+    sleep(2)
+elif opcao == 3:
+    print('BEM VINDO A AULA DE GEOGRÁFIA')
+
+elif opcao == 4:
+    print('SAINDO DO PROGRAMA')
+    sleep(3)
 
 while opcao != 4:
     if opcao == 1:
@@ -61,26 +75,15 @@ while opcao != 4:
                 break
 
     elif opcao == 2:
-        print('BEM VINDO A AULA DE MATEMÁTICA !')
+        n1 = randint(0, 100)
+        n2 = randint(0, 100)
+        soma = n1 + n2
+        sub = n1 - n2
+        div = n1 - n2
+        fator = random.choice('+', '-', '*', '/')
 
     elif opcao == 3:
         print('BEM VINDO A AULA DE GEOGRÁFIA')
 
     else:
         break
-
-
-
-
-
-'''
-select = random.choice(['acessível', 'agressivo', 'assim','assinar']).strip().upper()
-S = "SS"
-print(select)
-#for palavra in range(0, len(select)):
- #       select = select.replace()
-
-original = "EXAMPLE"
-removed = original.replace("M", "")
-print(removed)
-'''
