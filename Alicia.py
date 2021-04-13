@@ -80,7 +80,11 @@ while opcao != 4:
         soma = n1 + n2
         sub = n1 - n2
         div = n1 - n2
-        fator = random.choice('+', '-', '*', '/')
+        escolha = random.choice(['SOMA', 'SUBTRAÇÂO', 'DIVISÂO'])
+        print(f'O COMPUTADOR ESCOLHEU 2 NUMEROS: {n1}  E {n2}')
+        result = float(input(f'Qual o resultado da {escolha} :'))
+        if escolha[0]:
+                escolha[0] == soma
 
     elif opcao == 3:
         print('BEM VINDO A AULA DE GEOGRÁFIA')
