@@ -80,7 +80,14 @@ while opcao != 4:
         sub = n1 - n2
         div = n1 - n2
         escolha = random.choice(['SOMA', 'SUBTRAÇÂO', 'DIVISÂO'])
-        print(f' === O COMPUTADOR ESCOLHEU 2 NUMEROS -> {n1} E {n2} ====')
+        sleep(2)
+        print(f' === O COMPUTADOR ESCOLHEU 2 NUMEROS ->:', end=' ')
+        sleep(2)
+        print(f'{n1}', end=' ')
+        sleep(2)
+        print( ' E ', end=' ')
+        sleep(2)
+        print(f'{n2}')
         result = float(input(f'Qual o resultado da {escolha} entre eles: '))
         if escolha[0]:
                 soma = n1 + n2
@@ -88,6 +95,7 @@ while opcao != 4:
                 if result == soma:
                     print('Voce acertou!')
                 else:
+                    print(f'O resultado correto é: {soma}')
                     print('Voce errou!')
 
     elif opcao == 3:
