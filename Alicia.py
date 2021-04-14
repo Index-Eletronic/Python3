@@ -83,30 +83,29 @@ while opcao != 4:
         escolha = random.choice(['SOMA', 'SUBTRAÇÂO', 'DIVISÂO'])
         sleep(2)
         print(f' === O COMPUTADOR ESCOLHEU 2 NUMEROS ->:', end=' ')
-        sleep(2)
+        sleep(1)
         print(f'{n1}', end=' ')
-        sleep(2)
+        sleep(1)
         print( ' E ', end=' ')
-        sleep(2)
+        sleep(1)
         print(f'{n2}')
         result = float(input(f'Qual o resultado da {escolha} entre eles: '))
-        if escolha[0]:
-                soma = n1 + n2
-                result = soma
-                if result == soma:
-                    print('Voce acertou!')
-                    conta += 1
-                else:
-                    print(f'O resultado correto é: {soma}')
-                    print('Voce errou!')
-                    conte += 1
+        soma = n1 + n2
+        subi = n1 - n2
+        divi = n1 / n2
 
-                    pergunta = ''
-                 while pergunta not in 'SN':
-                    pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
-                    if pergunta == 'Nn':
-                        print(f'Você acertou {conta} e errou {conte}')
-                        break
+        if result == soma or result == subi or result == divi:
+            print(f'Voce acertou!')
+            conta += 1
+        else:
+            print('Voce errou!')
+            print(f'O resultado correto é: {"Soma: ", soma, "Subitração: ", subi, "Divisão: ",divi}')
+            conte += 1
+
+        pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
+            if pergunta == 'Nn':
+                print(f'Você acertou {conta} e errou {conte}')
+                break
 
     elif opcao == 3:
         print('BEM VINDO A AULA DE GEOGRÁFIA')
