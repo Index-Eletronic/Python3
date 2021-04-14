@@ -5,7 +5,7 @@ import random
 from random import randint
 from time import sleep
 
-print('-=' * 10, "\33[0;40;42mBEM VINDO A PROFa.ALICIA V1.0\33[m", '-=' * 10 )
+print('-=' * 10, "\33[0;30;41mBEM VINDO A PROFa.ALICIA V1.0\33[m", '-=' * 10 )
 print()
 print('O QUE VOCÊ GOSTARIA DE ESTUDAR HOJE?')
 print('ESCOLHA A OPÇÃO:')
@@ -18,14 +18,14 @@ conta = conte = 0
 n1 = 0
 n2 = 0
 if opcao == 1:
-    print('BEM VINDO A AULA DE PORTUGUÊS !')
+    print('\033[1;93mBEM VINDO A AULA DE PORTUGUÊS !\33[m')
     sleep(2)
-    print('OBJETIVO: ADIVINHE SE A PALABRA SORTEADA TEM "S", "SS", "C" OU "Ç".')
+    print('\033[1;35mOBJETIVO:\33[m ADIVINHE SE A PALABRA SORTEADA TEM "S", "SS", "C" OU "Ç".')
     sleep(2)
 elif opcao == 2:
-    print('BEM VINDO A AULA DE MATEMÁTICA !')
+    print('\033[1;93m BEM VINDO A AULA DE MATEMÁTICA !\33[m')
     sleep(2)
-    print('OBJETIVO: FAÇA AS CONTAS A SEGUIR.')
+    print('\033[1;35mOBJETIVO:\33[m FAÇA AS CONTAS A SEGUIR.')
     sleep(2)
 elif opcao == 3:
     print('BEM VINDO A AULA DE GEOGRÁFIA')
@@ -63,52 +63,46 @@ while opcao != 4:
         resp = str(input('DIGITE A PALABRA CORRETA AQUI: ')).strip().upper()
 
         if resp == palavra:
-            print('VOCÊ ACERTOU, PARABENS')
+            print('\033[1;92mVOCÊ ACERTOU\33[m')
             conta += 1
         else:
-            print('VOCE ERROU !')
+            print('\033[;31mVOCÊ ERROU! \33[m')
+            print(f'A palavra correta é:\033[1;35m {palavra}\33[m')
             conte += 1
-        pergunta = ' '
-        while pergunta not in 'SN':
-            pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
-            if pergunta == 'N':
-                print(f'Você acertou {conta} e errou {conte}')
-                break
+
+        pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
+        if pergunta in 'Nn':
+            print(f'\033[;1mRESULTADO: ACERTOS = {conta} e ERROS= {conte}\33[m')
+            break
 
     elif opcao == 2:
         n1 = randint(0, 100)
         n2 = randint(0, 100)
         sub = n1 - n2
         div = n1 - n2
-        escolha = random.choice(['SOMA', 'SUBTRAÇÂO', 'DIVISÂO'])
+        escolha = random.choice(['SOMA', 'SUBTRAÇÃO', 'DIVISÂO'])
         sleep(2)
-        print(f' === O COMPUTADOR ESCOLHEU 2 NUMEROS ->:', end=' ')
+        print(f' === \033[;1mO COMPUTADOR ESCOLHEU 2 NUMEROS ->:\33[m', end=' ')
         sleep(1)
-        print(f'{n1}', end=' ')
+        print(f'\033[1;91m{n1}\33[m', end=' ')
         sleep(1)
         print( ' E ', end=' ')
         sleep(1)
-        print(f'{n2}')
-        result = float(input(f'Qual o resultado da {escolha} entre eles: '))
+        print(f'\033[1;91m{n2}\33[m')
+        result = float(input(f'Qual o resultado da \033[;1m{escolha}\33[m entre eles: '))
         soma = n1 + n2
         subi = n1 - n2
         divi = n1 / n2
 
         if result == soma or result == subi or result == divi:
-            print(f'Voce acertou!')
+            print('\033[1;92mVOCÊ ACERTOU\33[m')
             conta += 1
         else:
-            print('Voce errou!')
+            print('\033[;31mVOCÊ ERROU! \33[m')
             print(f'O resultado correto é: {"Soma: ", soma, "Subitração: ", subi, "Divisão: ",divi}')
             conte += 1
 
-        pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
-            if pergunta == 'Nn':
-                print(f'Você acertou {conta} e errou {conte}')
-                break
-
-    elif opcao == 3:
-        print('BEM VINDO A AULA DE GEOGRÁFIA')
-
-    else:
+    pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()
+    if pergunta in 'Nn':
+        print(f'\033[;1mRESULTADO: ACERTOS = {conta} e ERROS= {conte}\33[m')
         break
