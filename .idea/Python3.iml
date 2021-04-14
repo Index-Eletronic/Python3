@@ -4,5 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Maquina" />
+    <orderEntry type="module" module-name="Python2" />
+    <orderEntry type="module" module-name="Alicia" />
   </component>
 </module>
