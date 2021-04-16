@@ -2,20 +2,21 @@
 Aprimore o desafio Jogador de Futebol para que ele funcione com vários jogadores, incluindo um sistema de visualização de detalhes do aproveitamento de cada jogador.
 '''
 
-time = list()
+
 jogador = dict()
 partidas = list()
+time = list()
 #============================= LER OS DADOS DE VÁRIOS JOGADORES ======================================
 while True:
-    jogador.clear()
+    jogador.clear() # Vai limpar o cadastro para receber um novo jogador
     jogador['nome'] = str(input('Nome do Jogador: '))
     tot = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
-    partidas.clear()
-    for c in range(0, tot):
+    partidas.clear() # Vai limpar a partida para receber novos numeros.
+    for c in range(0, tot): # Cria um contador para inserir o numero de gols
         partidas.append(int(input(f'Quantos gols na partida {c+1}?')))
-    jogador['gols'] = partidas [:]
-    jogador['total'] = sum(partidas) # sum =  soma
-    time.append(jogador.copy())
+    jogador['gols'] = partidas [:] # Lista Partidas recebe uma cópia de Dicionario jogador
+    jogador['total'] = sum(partidas) # O total recebe a soma das lista partidas [sum =  soma]
+    time.append(jogador.copy()) # O time recebe uma copia de jogador.
     while True:
         resp = str(input(' Quer Continuar? [S/N]: ')).upper()[0]
         if resp in 'SN':
